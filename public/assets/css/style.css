@@ -1,0 +1,79 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(99 102 241);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(79 70 229);
+}
+
+.dot-span {
+    color: rgb(99 102 241);
+    font-size: 2rem;
+}
+
+.hero {
+    margin-top: 110px;
+}
+
+.image-hero img {
+    height: 80vh;
+}
+
+.indigo-500 {
+    background-color: rgb(99 102 241);
+    color: white;
+}
+
+.btn-indigo {
+    background-color: rgb(99 102 241);
+    color: white;
+}
+
+.btn-indigo:hover {
+    background-color: rgb(79 70 229);
+    color: white;
+}
+
+.btn-login {
+    border-color: rgb(99 102 241);
+    color: rgb(99 102 241);
+    margin-right: 10px;
+}
+
+.btn-login:hover {
+    background-color: rgb(99 102 241);
+    color: white;
+}
+
+.btn-register {
+    background-color: rgb(99 102 241);
+    color: white;
+}
+
+.btn-register:hover {
+    border-color: rgb(99 102 241);
+    color: rgb(99 102 241);
+}
+
+.popular-course {
+    margin-top: 100px;
+}
+
+.card img {
+    object-fit: cover;
+    width: 303px;
+    height: 206px;
+}
+
+.jumbotron {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}

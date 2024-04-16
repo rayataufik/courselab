@@ -23,10 +23,10 @@
         </ul>
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="btn btn-login" href="#">Login</a>
+                <a class="btn btn-login me-3" href="/login">Login</a>
             </li>
             <li class="nav-item">
-                <a class="btn btn-register" href="#">Register</a>
+                <a class="btn btn-register" href="/register">Register</a>
             </li>
         </ul>
     </div>

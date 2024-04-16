@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 col-6">
             <div class="card">
                 <img src="{{ asset('images/pexels-photo-7498603.jpeg') }}" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-6">
             <div class="card">
                 <img src="{{ asset('images/pexels-photo-7498603.jpeg') }}" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -53,7 +53,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-6">
             <div class="card">
                 <img src="{{ asset('images/pexels-photo-7498603.jpeg') }}" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -64,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-6">
             <div class="card">
                 <img src="{{ asset('images/pexels-photo-7498603.jpeg') }}" class="card-img-top" alt="...">
                 <div class="card-body">

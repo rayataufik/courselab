@@ -12,14 +12,15 @@
                     </a>
                     <h3 class="font-weight-bold">Login</h3>
                     <p class="text secondary mt-3 mb-3">Hi, Welcome back 👋</p>
-                    <form>
+                    <form action="/login" method="POST">
+                        @csrf
                         <div class="mb-3">
                             <label for="formControlEmail" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="formControlEmail" placeholder="name@example.com" required>
+                            <input type="email" class="form-control" id="formControlEmail" placeholder="name@example.com" name="email" required>
                         </div>
                         <div class="mb-3">
                             <label for="formControlPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="formControlPassword" placeholder="Enter your password" required>
+                            <input type="password" class="form-control" id="formControlPassword" placeholder="Enter your password" name="password" required>
                         </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="checkbox">

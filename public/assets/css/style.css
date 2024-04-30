@@ -202,14 +202,16 @@ i.bx-left-arrow-alt {
 .main-course {
     position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
     z-index: 100;
-    background: #e7f2fd;
+    background: #fff;
 }
-.main-course h1 {
-    color: #11101d;
-    font-size: 40px;
-    text-align: center;
+
+.content {
+    margin-top: 100px;
+}
+
+.image img {
+    height: 50%;
+    width: 50%;
 }

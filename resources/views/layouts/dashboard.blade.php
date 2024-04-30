@@ -43,6 +43,17 @@
                 menu.classList.remove("submenu-active");
             });
         });
+
+        selectImage.onchange = evt => {
+            preview = document.getElementById('preview');
+            // preview.style.display = 'block';
+            preview.style.width = '50%';
+            preview.style.height = '50%';
+            const [file] = selectImage.files
+            if (file) {
+                preview.src = URL.createObjectURL(file)
+            }
+        }
     </script>
 </body>
 

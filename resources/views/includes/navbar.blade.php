@@ -44,7 +44,7 @@
                     Hi, {{auth()->user()->name}}
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                    <li><a class="dropdown-item" href="/admin/dashboard">Dashboard</a></li>
                     <li>
                         <form action="/logout" method="POST">
                             @csrf

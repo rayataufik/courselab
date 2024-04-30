@@ -16,15 +16,15 @@
                         @csrf
                         <div class="mb-3">
                             <label for="formControlUsername" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="formControlUsername" placeholder="Enter your username" name="name" required>
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="formControlUsername" placeholder="Enter your username" name="name" required>
                         </div>
                         <div class="mb-3">
                             <label for="formControlEmail" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="formControlEmail" placeholder="name@example.com" name="email" required>
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="formControlEmail" placeholder="name@example.com" name="email" required>
                         </div>
                         <div class="mb-3">
                             <label for="formControlPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="formControlPassword" placeholder="Enter your password" name="password" required>
+                            <input type="password" class="form-control @error('password') is-invalid @enderror" id="formControlPassword" placeholder="Enter your password" name="password" required>
                         </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" class="form-check-input" id="checkbox">

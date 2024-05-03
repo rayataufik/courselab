@@ -8,7 +8,7 @@
         <div class="border rounded text-center p-3">
             <img id="preview" src="{{ Storage::url($content->image) }}" alt="{{$content->title}}" class="mt-3" style="width: 30%; height: 30%;" />
         </div>
-        <form action="/admin/content/{slug}/edit" method="POST" enctype="multipart/form-data">
+        <form action="/admin/content/{{$content->slug}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mt-3">
                 <label>Tambahkan Image</label>
@@ -52,9 +52,9 @@
                 </div>
                 @enderror
             </div>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4 mb-5">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4 mb-4">
                 <a class="btn btn-primary" href="/admin/content" role="button">Kembali</a>
-                <button type="submit" class="btn btn-primary">Tambah Content</button>
+                <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
             </div>
         </form>
     </div>

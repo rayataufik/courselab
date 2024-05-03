@@ -208,4 +208,36 @@ class AdminController extends Controller
 
         return redirect('/admin/content')->with('SuccessAlert', 'Content Added Successfully!');
     }
+
+    public function editContent($slug)
+    {
+        $content = Content::where('slug', $slug)->first();
+
+        return view('pages.admin.edit_content', [
+            'content' => $content
+        ]);
+    }
+
+    public function updateContent(Request $request, Content $content, $slug)
+    {
+        $content = Content::where('slug', $slug)->first();
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'image' => 'nullable|image|mimes:jpg,png|max:2048',
+            'content' => 'required|string'
+        ]);
+
+        if ($request->file('image')) {
+            if ($content->image) {
+                Storage::delete($content->image);
+            }
+            $validatedData['image'] = $request->file('image')->store('contents_images', 'public');
+        }
+
+        $validatedData['slug'] = Str::slug($validatedData['title']);
+
+        $content->update($validatedData);
+
+        return redirect('/admin/content')->with('SuccessAlert', 'Content Updated Successfully!');
+    }
 }

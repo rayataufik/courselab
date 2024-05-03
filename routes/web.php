@@ -41,6 +41,8 @@ Route::middleware('IsAdmin')->prefix('admin')->group(function () {
     Route::get('/content', [AdminController::class, 'showContent']);
     Route::get('/content/create', [AdminController::class, 'createContent']);
     Route::post('/content/new', [AdminController::class, 'storeContent']);
+    Route::get('/content/{slug}/edit', [AdminController::class, 'editContent']);
+    Route::post('/content/{slug}', [AdminController::class, 'updateContent']);
     Route::get('/content/subcategories', [AdminController::class, 'getSubCategories']);
 });
 

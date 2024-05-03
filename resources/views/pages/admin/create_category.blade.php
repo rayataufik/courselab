@@ -37,7 +37,8 @@
                 </div>
                 @enderror
             </div>
-            <div class="mt-3">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4 mb-5">
+                <a class="btn btn-primary" href="/admin/category" role="button">Kembali</a>
                 <button type="submit" class="btn btn-primary mb-3">Tambah Kategori</button>
             </div>
         </form>

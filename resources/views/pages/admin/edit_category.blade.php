@@ -8,18 +8,18 @@
         <div class="border rounded text-center p-3">
             <img id="preview" src="{{ Storage::url($category->image) }}" alt="{{$category->name}}" class="mt-3" style="width: 50%; height: 50%;" />
         </div>
-        <form action="/admin/category/new" method="POST" enctype="multipart/form-data">
+        <form action="/admin/category/{{$category->slug}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mt-3">
                 <label>Tambahkan Image Kategori</label>
-                <input type="file" class="form-control" name="image" id="selectImage" @error('image') is-invalid @enderror required>
+                <input type="file" class="form-control" name="image" id="selectImage" @error('image') is-invalid @enderror>
                 @error('image')
                 <div class="invalid-feedback">
                     {{$message}}
                 </div>
                 @enderror
             </div>
-            <div class="mt-3">
+            <div class=" mt-3">
                 <label>Nama Kategori</label>
                 <input type="text" class="form-control" name="name" value="{{old('name', $category->name)}}" @error('name') is-invalid @enderror required>
                 @error('name')
@@ -30,10 +30,7 @@
             </div>
             <div class="mt-3">
                 <label>Deskripsi Kategori</label>
-                <!-- <textarea class="form-control" name="description" rows="3" @error('description') is-invalid @enderror required>
-                
-                </textarea> -->
-                {{!! $category->description!!}}
+                <textarea id="editor" name="description">{{old('description',$category->description)}}</textarea>
                 @error('description')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -41,10 +38,20 @@
                 @enderror
             </div>
             <div class="mt-3">
-                <button type="submit" class="btn btn-primary mb-3">Tambah Kategori</button>
+                <button type="submit" class="btn btn-primary mb-3">Simpan perubahan</button>
             </div>
         </form>
     </div>
 </div>
-
+<script>
+    ClassicEditor
+        .create(document.querySelector('#editor'), {
+            ckfinder: {
+                uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}",
+            }
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
 @stop

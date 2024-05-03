@@ -122,10 +122,10 @@
             <a href="/admin/categories">Categories</a>
         </li>
         <li class="item">
-            <a href="#">Subcategory</a>
+            <a href="/admin/subcategory">Subcategory</a>
         </li>
         <li class="item">
-            <a href="#">Content</a>
+            <a href="/admin/content">Content</a>
         </li>
     </ul>
 </div>

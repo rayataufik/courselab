@@ -240,4 +240,17 @@ class AdminController extends Controller
 
         return redirect('/admin/content')->with('SuccessAlert', 'Content Updated Successfully!');
     }
+
+    public function deleteContent($slug)
+    {
+        $content = Content::where('slug', $slug)->first();
+
+        if ($content->image) {
+            Storage::delete($content->image);
+        }
+
+        $content->delete();
+
+        return redirect('/admin/content')->with('SuccessAlert', 'Content Deleted Successfully!');
+    }
 }

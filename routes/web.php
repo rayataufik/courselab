@@ -1,16 +1,20 @@
 <?php
 
+use App\Http\Middleware\IsAuth;
+use App\Http\Middleware\IsAdmin;
+use App\Http\Middleware\IsGuest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
-use App\Http\Middleware\IsAdmin;
-use App\Http\Middleware\IsAuth;
-use App\Http\Middleware\IsGuest;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ForumController;
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+Route::get('/', [CourseController::class, 'index']);
+Route::get('/category/{slug}', [CourseController::class, 'show']);
+Route::get('/course/{slug}', [CourseController::class, 'showCourse']);
+
+Route::get('/forum', [ForumController::class, 'index']);
 
 Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login', [AuthController::class, 'postLogin']);
@@ -20,9 +24,6 @@ Route::post('/register', [AuthController::class, 'registerPost']);
 
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
-Route::get('/course', function () {
-    return view('pages.course');
-});
 
 Route::middleware('IsAdmin')->prefix('admin')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'index']);
@@ -44,6 +45,7 @@ Route::middleware('IsAdmin')->prefix('admin')->group(function () {
     Route::get('/content/{slug}/edit', [AdminController::class, 'editContent']);
     Route::post('/content/{slug}', [AdminController::class, 'updateContent']);
     Route::get('/content/subcategories', [AdminController::class, 'getSubCategories']);
+    Route::get('/content/delete/{slug}', [AdminController::class, 'deleteContent']);
 });
 
 Route::post('ckeditor/upload', [AdminController::class, 'upload'])->name('ckeditor.upload');

@@ -35,7 +35,8 @@
             </form>
         </div>
     </div>
-    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+    <hr>
+    <div class="d-flex flex-column flex-sm-row justify-content-between">
         <p>© 2023 CouseLab. All rights reserved.</p>
     </div>
 </div>

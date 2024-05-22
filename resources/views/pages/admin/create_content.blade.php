@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="content">
-        <h3>Tambah Kategori</h3>
+        <h3>Tambah Konten</h3>
         <hr>
         <div class="border rounded text-center p-3">
             <img id="preview" src="https://via.placeholder.com/140?text=IMAGE" alt="IMAGE" class="mt-3" />
@@ -38,7 +38,7 @@
             </div>
             <div class="mt-3">
                 <label for="subkategori" class="form-label">Pilih Subkategori</label>
-                <select class="form-select" name="subcategory_id" id="subkategori">
+                <select class="form-select" name="subcategory_id" id="subkategori" required>
                 </select>
             </div>
             <div class="mt-3">
@@ -52,7 +52,7 @@
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4 mb-5">
                 <a class="btn btn-primary" href="/admin/content" role="button">Kembali</a>
-                <button type="submit" class="btn btn-primary mb-3">Tambah Content</button>
+                <button type="submit" class="btn btn-primary">Tambah Content</button>
             </div>
         </form>
     </div>

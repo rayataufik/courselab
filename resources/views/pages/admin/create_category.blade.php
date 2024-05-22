@@ -38,8 +38,8 @@
                 @enderror
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4 mb-5">
-                <a class="btn btn-primary" href="/admin/category" role="button">Kembali</a>
-                <button type="submit" class="btn btn-primary mb-3">Tambah Kategori</button>
+                <a class="btn btn-primary" href="/admin/categories" role="button">Kembali</a>
+                <button type="submit" class="btn btn-primary">Tambah Kategori</button>
             </div>
         </form>
     </div>

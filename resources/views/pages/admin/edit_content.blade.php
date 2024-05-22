@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="content">
-        <h3>Tambah Kategori</h3>
+        <h3>Edit Konten</h3>
         <hr>
         <div class="border rounded text-center p-3">
             <img id="preview" src="{{ Storage::url($content->image) }}" alt="{{$content->title}}" class="mt-3" style="width: 30%; height: 30%;" />

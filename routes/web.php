@@ -15,8 +15,13 @@ Route::get('/category/{slug}', [CourseController::class, 'show']);
 Route::get('/course/{slug}', [CourseController::class, 'showCourse']);
 
 Route::get('/forum', [ForumController::class, 'index']);
+Route::get('/forum/create', [ForumController::class, 'create'])->middleware('auth');
+Route::post('/forum/store', [ForumController::class, 'store'])->middleware('auth');
+Route::get('/forum/{slug}', [ForumController::class, 'show']);
+Route::post('/forum/reply/{threadId}', [ForumController::class, 'storeReply'])->middleware('auth');
 
-Route::get('/login', [AuthController::class, 'login']);
+
+Route::get('/login', [AuthController::class, 'login'])->name('login');;
 Route::post('/login', [AuthController::class, 'postLogin']);
 
 Route::get('/register', [AuthController::class, 'register']);

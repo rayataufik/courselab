@@ -45,7 +45,7 @@
             </div>
             <div class="mt-3">
                 <label>Content</label>
-                <textarea id="editor" name="content">{{old('content',$content->content)}}</textarea>
+                <textarea id="myeditorinstance" name="content">{{old('content',$content->content)}}</textarea>
                 @error('content')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -60,16 +60,5 @@
     </div>
 </div>
 
-<script>
-    ClassicEditor
-        .create(document.querySelector('#editor'), {
-            ckfinder: {
-                uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}",
-            }
-        })
-        .catch(error => {
-            console.error(error);
-        });
-</script>
 
 @stop

@@ -9,9 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ForumController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         return view('pages.forum.forum', [
@@ -19,17 +16,11 @@ class ForumController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('pages.forum.create_forum');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $user = auth()->user();
@@ -55,10 +46,6 @@ class ForumController extends Controller
         return redirect('/forum')->with('success', 'Thread added successfully!');
     }
 
-
-    /**
-     * Display the specified resource.
-     */
     public function show(string $slug)
     {
         return view('pages.forum.show_post', [
@@ -81,9 +68,6 @@ class ForumController extends Controller
         return redirect()->back()->with('success', 'Reply posted successfully!');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id)
     {
         //

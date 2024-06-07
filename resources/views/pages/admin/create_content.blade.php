@@ -43,7 +43,7 @@
             </div>
             <div class="mt-3">
                 <label>Content</label>
-                <textarea id="editor" name="content"></textarea>
+                <textarea id="myeditorinstance" name="content"></textarea>
                 @error('content')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -59,16 +59,6 @@
 </div>
 
 <script>
-    ClassicEditor
-        .create(document.querySelector('#editor'), {
-            ckfinder: {
-                uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}",
-            }
-        })
-        .catch(error => {
-            console.error(error);
-        });
-
     document.addEventListener('DOMContentLoaded', function() {
         var kategoriDropdown = document.getElementById('kategori');
         var subkategoriDropdown = document.getElementById('subkategori');

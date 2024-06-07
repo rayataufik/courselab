@@ -3,6 +3,7 @@
 
 <head>
     @include('includes.head')
+    <x-head.tinymce-config />
 </head>
 
 <body>
